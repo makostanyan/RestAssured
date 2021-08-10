@@ -1,3 +1,6 @@
+package RestAssured;
+
+import RestAssured.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

@@ -1,10 +1,12 @@
+package RestAssured;
+
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.testng.annotations.BeforeClass;
 
 public class BaseTest {
 
-    Response response;
+    public Response response;
 
     @BeforeClass
     public void initTest(){

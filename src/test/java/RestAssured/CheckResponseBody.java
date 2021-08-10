@@ -1,3 +1,6 @@
+package RestAssured;
+
+import RestAssured.BaseTest;
 import org.hamcrest.core.Is;
 import org.testng.annotations.Test;
 
