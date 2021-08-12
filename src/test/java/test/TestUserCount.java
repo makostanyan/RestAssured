@@ -1,24 +1,20 @@
-package pojo;
+package test;
 
-import RestAssured.BaseTest;
 import io.restassured.common.mapper.TypeRef;
+import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import java.util.ArrayList;
+import pojo.User;
+import requests.HTTPReq;
+
 import java.util.List;
 
 public class TestUserCount extends BaseTest {
 
     @Test
     public void UserCountTest(){
-
+        Response response = HTTPReq.get(url);
         List<User> returnedUserInfo = response.as(new TypeRef<>() {});
-        List<Integer> id = new ArrayList<>();
-
-        for (int i = 0; i < returnedUserInfo.size(); i++) {
-           id.add(returnedUserInfo.get(i).getId());
-        }
-
-        Assert.assertEquals(id.size(), 10);
+        Assert.assertEquals(HTTPReq.getIdListSize(response, returnedUserInfo), 10);
     }
 }
